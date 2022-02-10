@@ -1,11 +1,12 @@
-﻿using homeCleaning.Models;
+﻿using homeCleaning.interfaces;
+using homeCleaning.Models;
 using System.Collections.Generic;
 
 namespace homeCleaning.services
 {
-    public static class DataRepository
+    public  class FromMemDataRepository : IDataRepository
     {
-        public static List<Player> GetAllPlayers()
+        public  List<Player> GetAllPlayers()
         {
             return new List<Player>
             {
@@ -15,7 +16,7 @@ namespace homeCleaning.services
             };
         } 
         
-        public static List<Shore> GetAllShors()
+        public List<Shore> GetAllShors()
         {
             return new List<Shore>
             {

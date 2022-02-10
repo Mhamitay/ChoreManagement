@@ -1,4 +1,5 @@
-﻿using homeCleaning.services;
+﻿using homeCleaning.Models;
+using homeCleaning.services;
 using System;
 using System.Collections.Generic;
 
@@ -9,40 +10,36 @@ namespace homeCleaning
 
         static void Main(string[] args)
         {
-            var data = DataRepository.GetAllPlayers();
+            var playerlst = new FromMemDataRepository().GetAllPlayers();
+            var playersWithNumbers = GetRandomNumberForEachPlayer(playerlst);
 
-            var dd = GetRandomNumberForEachPlayer(data);
-            string enter = null;
-            for (int i = 0; i < 3; i++)
+            var shorelst = new FromMemDataRepository().GetAllShors();
+            var shoresWithNumbers = GetRandomNumberForEachshore(shorelst);
+
+            Console.Write("players are as follows" + Environment.NewLine);
+
+            for (int i = 0; i < playersWithNumbers.Count; i++)
             {
-            //    if (intCount == 0)
-            //    {
+                if (playersWithNumbers.TryGetValue(i, out Player strValue))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write($"Player number {i} is : {strValue._name}" + Environment.NewLine);
+                }
+            }
 
-            //        Console.Write("player one please select on of the following numbers");
-            //        Console.WriteLine(" " + Environment.NewLine);
-            //        Console.WriteLine(" " + ranA.ToString());
-            //        Console.WriteLine(" " + ranB.ToString());
-            //        Console.WriteLine(" " + ranC.ToString());
-            //        Console.WriteLine(" " + Environment.NewLine);
-            //        enter = Console.ReadLine();
-            //        intCount++;
 
-            //    }
-            //    else
-            //    {
-            //        Console.Write("player tow please select on of the non selected numbers");
-            //        Console.WriteLine(" " + Environment.NewLine);
-            //        enter = Console.ReadLine();
-            //        // checkEntered(enter);
-            //    }
-            //    checkEntered(enter);
+            Console.Write(Environment.NewLine + "player one please select on of the following numbers");
+            Console.WriteLine(" " + Environment.NewLine);
+
+            foreach (var item in shoresWithNumbers.Keys)
+            {
+                Console.WriteLine("- " + item + Environment.NewLine);
 
             }
-            //Console.Write("Please press any key to exit");
-            //Console.Read();
+
+            var aa = Console.ReadKey();
 
         }
-
         private static void checkEntered(string enter)
         {
             //if (enter.ToString() == ranA.ToString() || enter.ToString() == ranB.ToString() || enter.ToString() == ranC.ToString())
@@ -75,12 +72,10 @@ namespace homeCleaning
             //    checkEntered(enter1.ToString());
             //}
         }
-
-
         private static IDictionary<int,Player> GetRandomNumberForEachPlayer(List<Player> players)
         {
             var usedRandom = new List<int>();
-            var x = new  Dictionary<int, Player>();
+            var playerList = new  Dictionary<int, Player>();
 
             foreach (var player in players)
             {
@@ -88,9 +83,9 @@ namespace homeCleaning
                 var numb = getRandomNumber();
                
                 Player tt=null;
-                if (!x.TryGetValue(numb,out tt))
+                if (!playerList.TryGetValue(numb,out tt))
                 {
-                    x.Add(numb, player);
+                    playerList.Add(numb, player);
                     usedRandom.Add(numb);
                 }
                 else
@@ -100,11 +95,33 @@ namespace homeCleaning
                 };
              
             }
-            return null;
+            return playerList;
         }
 
+        private static IDictionary<int, Shore> GetRandomNumberForEachshore(List<Shore> shores)
+        {
+            var usedRandom = new List<int>();
+            var shoreList = new Dictionary<int, Shore>();
 
+            foreach (var shore in shores)
+            {
+            lable:
+                var numb = getRandomNumber10();
 
+                Shore _shore = null;
+                if (!shoreList.TryGetValue(numb, out _shore))
+                {
+                    shoreList.Add(numb, shore);
+                    usedRandom.Add(numb);
+                }
+                else
+                {
+                    goto lable;
+
+                };
+            }
+            return shoreList;
+        }
 
         private static int getRandomNumber()
         {
@@ -113,6 +130,14 @@ namespace homeCleaning
                                       
             return rInt;
         }
-    
+
+        private static int getRandomNumber10()
+        {
+            Random random = new Random();
+            int rInt = random.Next(10, 100);
+
+            return rInt;
+        }
+
     }
 }

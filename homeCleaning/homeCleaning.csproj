@@ -74,6 +74,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataRepository.cs" />
+    <Compile Include="interfaces\IDataRepository.cs" />
     <Compile Include="Services\Player.cs" />
   </ItemGroup>
   <ItemGroup>
