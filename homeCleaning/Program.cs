@@ -1,9 +1,10 @@
-﻿using homeCleaning.Models;
+﻿using HomeCleaning;
+using HomeCleaningLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace homeCleaning
+namespace HomeCleaningLib
 {
     partial class Program
     {

@@ -1,13 +1,12 @@
-﻿using homeCleaning.Models;
-using homeCleaning.services;
+﻿using HomeCleaningLib.Models;
+using HomeCleaningLib.services;
 using System;
 using System.Collections.Generic;
 
-namespace homeCleaning
+namespace HomeCleaning
 {
-    partial class Program
-    {
-        private class GameManager
+
+        public class GameManager
         {
             public IDictionary<int, string> GetRandomNumberForEachPlayer()
             {
@@ -72,5 +71,5 @@ namespace homeCleaning
                 return rInt;
             }
         }
-    }
+
 }
