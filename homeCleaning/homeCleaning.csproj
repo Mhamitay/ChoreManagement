@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameManager.cs" />
     <Compile Include="interfaces\Ikid.cs" />
     <Compile Include="interfaces\IParent.cs" />
     <Compile Include="Models\Deed.cs" />
