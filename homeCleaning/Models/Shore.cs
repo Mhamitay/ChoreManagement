@@ -1,11 +1,11 @@
-﻿using HomeCleaningLib.interfaces;
+﻿using homeCleaning.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeCleaningLib.Models
+namespace homeCleaning.Models
 {
     public class Shore : IShore
     {

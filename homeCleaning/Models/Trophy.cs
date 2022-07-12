@@ -1,7 +1,7 @@
-﻿using HomeCleaningLib.Enums;
-using HomeCleaningLib.interfaces;
+﻿using homeCleaning.Enums;
+using homeCleaning.interfaces;
 
-namespace HomeCleaningLib.Models
+namespace homeCleaning.Models
 {
     public class Trophy : ITrophy
     {

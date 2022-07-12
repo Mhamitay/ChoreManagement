@@ -1,4 +1,4 @@
-﻿namespace HomeCleaningLib.services
+﻿namespace homeCleaning.Models
 {
     public class Player
     {

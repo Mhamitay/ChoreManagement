@@ -1,10 +1,10 @@
-﻿using HomeCleaning;
-using HomeCleaningLib.Models;
+﻿using homeCleaning.Models;
+using homeCleaning.services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HomeCleaningLib
+namespace homeCleaning
 {
     partial class Program
     {
@@ -26,10 +26,10 @@ namespace HomeCleaningLib
             Console.Write("players are as follows" + Environment.NewLine);
             for (int i = 0; i <= playersWithNumbers.Keys.Count+1; i++)
             {
-                if (playersWithNumbers.TryGetValue(i,out string val))
+                if (playersWithNumbers.TryGetValue(i,out Player val))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write($"Player number {i} is : {val}" + Environment.NewLine);
+                    Console.Write($"Player number {i} is : {val._name}" + Environment.NewLine);
                 }
             }
         }

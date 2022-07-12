@@ -1,6 +1,6 @@
-﻿using HomeCleaningLib.interfaces;
+﻿using homeCleaning.interfaces;
 
-namespace HomeCleaningLib.Models
+namespace homeCleaning.Models
 {
     public class kid : Ikid
     {

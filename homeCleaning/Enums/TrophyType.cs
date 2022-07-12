@@ -1,4 +1,4 @@
-﻿namespace HomeCleaningLib.Enums
+﻿namespace homeCleaning.Enums
 {
    public enum TrophyType
     {

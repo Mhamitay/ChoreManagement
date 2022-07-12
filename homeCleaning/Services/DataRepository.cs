@@ -1,8 +1,8 @@
-﻿using HomeCleaningLib.interfaces;
-using HomeCleaningLib.Models;
+﻿using homeCleaning.interfaces;
+using homeCleaning.Models;
 using System.Collections.Generic;
 
-namespace HomeCleaningLib.services
+namespace homeCleaning.services
 {
     public  class MemDataRepository : IDataRepository
     {

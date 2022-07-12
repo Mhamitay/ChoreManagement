@@ -1,6 +1,6 @@
-﻿using HomeCleaningLib.Enums;
+﻿using homeCleaning.Enums;
 
-namespace HomeCleaningLib.interfaces
+namespace homeCleaning.interfaces
 {
     public interface ITrophy
     {

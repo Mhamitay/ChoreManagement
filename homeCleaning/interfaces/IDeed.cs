@@ -1,7 +1,7 @@
-﻿using HomeCleaningLib.Enums;
-using HomeCleaningLib.Models;
+﻿using homeCleaning.Enums;
+using homeCleaning.Models;
 
-namespace HomeCleaningLib.interfaces
+namespace homeCleaning.interfaces
 {
     public interface IDeed
     {

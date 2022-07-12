@@ -1,4 +1,4 @@
-﻿namespace HomeCleaningLib.interfaces
+﻿namespace homeCleaning.interfaces
 {
     public interface IParent
     {
