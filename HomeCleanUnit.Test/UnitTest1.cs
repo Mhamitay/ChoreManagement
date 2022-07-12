@@ -10,7 +10,7 @@ namespace HomeCleanUnit.Test
         {
         }
 
-        [Category("Data ...  Provider")]
+        [Category("Data - Provider")]
         [Test]
         public void DataProvider_Returns_PlayersData_Test()
         {
