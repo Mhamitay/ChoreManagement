@@ -2,8 +2,6 @@
 {
     public class Player
     {
- 
-
         public Player(int id,string name)
         {
             _id = id;

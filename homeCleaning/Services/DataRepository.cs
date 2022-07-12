@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace homeCleaning.services
 {
-    public  class FromMemDataRepository : IDataRepository
+    public  class MemDataRepository : IDataRepository
     {
         public  List<Player> GetAllPlayers()
         {
@@ -12,7 +12,9 @@ namespace homeCleaning.services
             {
                 {new Player(0,"Ayah")},
                 {new Player(1,"Hajir")},
-                {new Player(2,"Solafa")}
+                {new Player(2,"Solafa")},
+                {new Player(3,"Malik")},
+             
             };
         } 
         
