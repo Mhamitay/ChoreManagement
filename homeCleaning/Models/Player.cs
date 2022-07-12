@@ -1,4 +1,4 @@
-﻿namespace homeCleaning.services
+﻿namespace HomeCleaningLib.services
 {
     public class Player
     {
