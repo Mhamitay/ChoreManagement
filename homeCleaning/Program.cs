@@ -7,7 +7,6 @@ namespace homeCleaning
 {
     class Program
     {
-         
         static void Main(string[] args)
         {
             IDictionary<int, Shore> shoresWithNumbers;
@@ -21,7 +20,6 @@ namespace homeCleaning
             DisplayPlayers(playersWithNumbers);
             DisplaySelectNumber(shoresWithNumbers);
         }
-
         private static void DisplayPlayers(IDictionary<int,Player> playersWithNumbers)
         {
             Console.Write("players are as follows" + Environment.NewLine);
@@ -66,7 +64,5 @@ namespace homeCleaning
             }
             
         }
-   
-       
      }
 }

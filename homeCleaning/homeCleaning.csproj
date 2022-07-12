@@ -59,8 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProvider.cs" />
-    <Compile Include="DiceManager.cs" />
+    <Compile Include="Services\DataProvider.cs" />
+    <Compile Include="Services\DiceManager.cs" />
     <Compile Include="interfaces\Ikid.cs" />
     <Compile Include="interfaces\IParent.cs" />
     <Compile Include="Models\Deed.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="Enums\TrophyType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomGenerator.cs" />
+    <Compile Include="Services\RandomGenerator.cs" />
     <Compile Include="Services\DataRepository.cs" />
     <Compile Include="interfaces\IDataRepository.cs" />
     <Compile Include="Models\Player.cs" />
