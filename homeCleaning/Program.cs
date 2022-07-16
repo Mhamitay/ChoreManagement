@@ -36,11 +36,11 @@ namespace homeCleaning
         private static void DisplaySelectNumber(IDictionary<int, Shore> shoresWithNumbers)
         {
             Console.Write(Environment.NewLine + "Please select on of the following numbers");
-            Console.WriteLine(" " + Environment.NewLine);
+            Console.WriteLine();
 
-            foreach (var item in shoresWithNumbers.Keys)
+            foreach (int number in shoresWithNumbers.Keys)
             {
-                Console.WriteLine("- " + item + Environment.NewLine);
+                Console.WriteLine("- " + number);
             }
             var numberEntred = Console.ReadLine();
             switch (DiceManager.ProcessEntry(numberEntred, shoresWithNumbers))
