@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChoreManagement.core.lib", "ChoreManagement.core.lib\ChoreManagement.core.lib.csproj", "{D1604925-BD1E-489E-9B7D-109CA828B597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChoreManagementConsole", "ChoreManagementConsole\ChoreManagementConsole.csproj", "{E41443D5-2058-4C8D-AA8D-CA7289C9A3AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChoreManagement.console", "ChoreManagementConsole\ChoreManagement.console.csproj", "{E41443D5-2058-4C8D-AA8D-CA7289C9A3AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3369EAE3-313D-4A22-BBAA-FA11D3D4BBE5}"
 	ProjectSection(SolutionItems) = preProject
