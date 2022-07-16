@@ -1,7 +1,7 @@
-﻿using homeCleaning.Enums;
-using homeCleaning.interfaces;
-
-namespace homeCleaning.Models
+﻿using ChoreManagement.core.lib.interfaces;
+using homeCleaning.Enums;
+ 
+namespace ChoreManagement.core.lib.Models
 {
     public class Deed : IDeed
     {

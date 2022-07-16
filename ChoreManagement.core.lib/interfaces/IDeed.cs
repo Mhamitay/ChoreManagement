@@ -1,7 +1,6 @@
 ﻿using homeCleaning.Enums;
-using homeCleaning.Models;
-
-namespace homeCleaning.interfaces
+ 
+namespace ChoreManagement.core.lib.interfaces
 {
     public interface IDeed
     {

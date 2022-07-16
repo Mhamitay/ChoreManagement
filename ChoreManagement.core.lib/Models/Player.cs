@@ -1,4 +1,4 @@
-﻿namespace homeCleaning.Models
+﻿namespace ChoreManagement.core.lib.Models
 {
     public class Player
     {

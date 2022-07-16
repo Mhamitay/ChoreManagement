@@ -1,6 +1,6 @@
-﻿namespace homeCleaning.interfaces
+﻿namespace ChoreManagement.core.lib.interfaces
 {
-    public interface IShore
+    public interface IChore
     {
         string discription { get; set; }
         int id { get; set; }

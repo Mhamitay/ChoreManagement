@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FF0FCC34-1751-41AD-AE67-7B2A20F8FF06}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>homeCleaning</RootNamespace>
+    <RootNamespace>ChoreManagement.console</RootNamespace>
     <AssemblyName>homeCleaning</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -59,33 +59,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\DataProvider.cs" />
-    <Compile Include="Services\DiceManager.cs" />
-    <Compile Include="interfaces\Ikid.cs" />
-    <Compile Include="interfaces\IParent.cs" />
-    <Compile Include="Models\Deed.cs" />
-    <Compile Include="Enums\DeedType.cs" />
-    <Compile Include="interfaces\IShore.cs" />
-    <Compile Include="interfaces\ITrophy.cs" />
-    <Compile Include="interfaces\IDeed.cs" />
-    <Compile Include="Models\kid.cs" />
-    <Compile Include="Models\Parent.cs" />
-    <Compile Include="Models\Shore.cs" />
-    <Compile Include="Models\Trophy.cs" />
-    <Compile Include="Enums\TrophyType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\RandomGenerator.cs" />
-    <Compile Include="Services\DataRepository.cs" />
-    <Compile Include="interfaces\IDataRepository.cs" />
-    <Compile Include="Models\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTOs\" />
+    <ProjectReference Include="..\ChoreManagement.core.lib\ChoreManagement.core.lib.csproj">
+      <Project>{d1604925-bd1e-489e-9b7d-109ca828b597}</Project>
+      <Name>ChoreManagement.core.lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

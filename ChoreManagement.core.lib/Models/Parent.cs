@@ -1,7 +1,7 @@
 ﻿
-using homeCleaning.interfaces;
-
-namespace homeCleaning.Models
+using ChoreManagement.core.lib.interfaces;
+ 
+namespace ChoreManagement.core.lib.Models
 {
     public class Parent : IParent
     {

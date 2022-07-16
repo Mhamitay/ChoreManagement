@@ -1,4 +1,4 @@
-﻿namespace homeCleaning.interfaces
+﻿namespace ChoreManagement.core.lib.interfaces
 {
     public interface Ikid
     {

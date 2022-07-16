@@ -1,26 +1,33 @@
 ﻿
-using homeCleaning.Models;
-using homeCleaning.services;
-using System;
-using System.Collections.Generic;
 
-namespace homeCleaning
+using ChoreManagement.core.lib.Models;
+
+namespace ChoreManagement.core.lib.Services
 {
     public class DiceManager
     {
-        public static void GetInitialData(out List<Player> playerlst, out List<Shore> shorelst)
+        public static void GetInitialData(out List<Player> playerlst, out List<Chore> shorelst)
         {
             DataProvider.InitiateData(out playerlst, out shorelst);
         }
-        public static void AddRondomNumbersToShoresAndPlayer(List<Player> playerlst, List<Shore> shorelst, out IDictionary<int, Shore> shoresWithNumbers, out IDictionary<int, Player> playersWithNumbers)
+        public static void AddRondomNumbersToShoresAndPlayer(List<Player> playerlst, List<Chore> shorelst, out IDictionary<int, Chore> shoresWithNumbers, out IDictionary<int, Player> playersWithNumbers)
         {
-            RandomGenerator.AddRondomNumbersToShoresAndPlayer(playerlst, shorelst,out shoresWithNumbers, out playersWithNumbers);
+            GetRondomNumbersToList(playerlst, shorelst, out shoresWithNumbers, out playersWithNumbers);
         }
-        public static int ProcessEntry(string numberEntred, IDictionary<int, Shore> shoresWithNumbers)
+
+        public static void GetRondomNumbersToList(List<Player> playerlst, List<Chore> shorelst, out IDictionary<int, Chore> shoresWithNumbers, out IDictionary<int, Player> playersWithNumbers)
+        {
+            RandomNumbersGenerator<Player> _playerRandom = new RandomNumbersGenerator<Player>(playerlst);
+            playersWithNumbers = _playerRandom.GetRandomNumberForEachObject();
+
+            RandomNumbersGenerator<Chore> _shoreRandom = new RandomNumbersGenerator<Chore>(shorelst);
+            shoresWithNumbers = _shoreRandom.GetRandomNumberForEachObject();
+        }
+        public static int ProcessEntry(string numberEntred, IDictionary<int, Chore> shoresWithNumbers)
         {
             if (numberEntred == "q" || numberEntred == "Q")
             {
-                 return 0;
+                return 0;
             }
 
             var result = int.TryParse(numberEntred, out int value);
@@ -30,7 +37,7 @@ namespace homeCleaning
                 return 1;
             }
 
-            if (shoresWithNumbers.TryGetValue(int.Parse(numberEntred), out Shore _shore))
+            if (shoresWithNumbers.TryGetValue(int.Parse(numberEntred), out Chore _shore))
             {
                 if (_shore.name == "kitchen")
                 {

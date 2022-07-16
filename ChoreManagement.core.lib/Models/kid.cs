@@ -1,6 +1,7 @@
-﻿using homeCleaning.interfaces;
+﻿
+using ChoreManagement.core.lib.interfaces;
 
-namespace homeCleaning.Models
+namespace ChoreManagement.core.lib.Models
 {
     public class kid : Ikid
     {

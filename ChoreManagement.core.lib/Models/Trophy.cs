@@ -1,7 +1,8 @@
-﻿using homeCleaning.Enums;
-using homeCleaning.interfaces;
+﻿using ChoreManagement.core.lib.interfaces;
+using homeCleaning.Enums;
 
-namespace homeCleaning.Models
+
+namespace ChoreManagement.core.lib.Models
 {
     public class Trophy : ITrophy
     {

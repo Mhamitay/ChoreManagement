@@ -1,6 +1,6 @@
 ﻿using homeCleaning.Enums;
 
-namespace homeCleaning.interfaces
+namespace ChoreManagement.core.lib.interfaces
 {
     public interface ITrophy
     {

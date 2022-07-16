@@ -1,16 +1,14 @@
-﻿using homeCleaning.Models;
-using homeCleaning.services;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-namespace homeCleaning
+namespace ChoreManagement.console
 {
     partial class Program
     {
         static void Main(string[] args)
         {
-            IDictionary<int, Shore> shoresWithNumbers;
+            IDictionary<int, Chore> shoresWithNumbers;
             IDictionary<int, Player> playersWithNumbers;
             List<Player> playerlst;
             List<Shore> shorelst;
