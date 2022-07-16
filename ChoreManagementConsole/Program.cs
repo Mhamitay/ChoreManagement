@@ -4,11 +4,11 @@ using ChoreManagement.core.lib.Services;
 
 ChoreEntity choreEntity = new();
 
-DiceManager.GetInitialData(out choreEntity.playerlst, out choreEntity.shorelst);
-DiceManager.AddRondomNumbersToShoresAndPlayer(choreEntity.playerlst, choreEntity.shorelst, out choreEntity.shoresWithNumbers, out choreEntity.playersWithNumbers);
+ChoreManager.GetInitialData(out choreEntity.playerlst, out choreEntity.chorelst);
+ChoreManager.AddRondomNumbersToChoresAndPlayer(choreEntity.playerlst, choreEntity.chorelst, out choreEntity.choresWithNumbers, out choreEntity.playersWithNumbers);
 
 DisplayPlayers(choreEntity.playersWithNumbers);
-DisplaySelectNumber(choreEntity.shoresWithNumbers);
+DisplaySelectNumber(choreEntity.choresWithNumbers);
 
  static void DisplayPlayers(IDictionary<int, Player> playersWithNumbers)
 {
@@ -22,12 +22,12 @@ DisplaySelectNumber(choreEntity.shoresWithNumbers);
         }
     }
 }
- static void DisplaySelectNumber(IDictionary<int, Chore> shoresWithNumbers)
+ static void DisplaySelectNumber(IDictionary<int, Chore> choresWithNumbers)
 {
     Console.Write(Environment.NewLine + "Please select on of the following numbers");
     Console.WriteLine();
 
-    foreach (int number in shoresWithNumbers.Keys)
+    foreach (int number in choresWithNumbers.Keys)
     {
         Console.WriteLine("- " + number);
     }
@@ -35,7 +35,7 @@ DisplaySelectNumber(choreEntity.shoresWithNumbers);
     if (numberEntred == null) 
         return;
  
-    switch (DiceManager.ProcessEntry(numberEntred, shoresWithNumbers))
+    switch (ChoreManager.ProcessEntry(numberEntred, choresWithNumbers))
     {
         case 0:
             Console.WriteLine("You selected to quit the application.. Good bye!");
@@ -48,10 +48,10 @@ DisplaySelectNumber(choreEntity.shoresWithNumbers);
             Console.WriteLine("please enter a valid number, please try again..");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("---------------------------------------------- " + Environment.NewLine);
-            DisplaySelectNumber(shoresWithNumbers);
+            DisplaySelectNumber(choresWithNumbers);
             break;
         default:
-            DisplaySelectNumber(shoresWithNumbers);
+            DisplaySelectNumber(choresWithNumbers);
             break;
     }
 }

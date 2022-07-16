@@ -4,7 +4,7 @@ using ChoreManagement.core.lib.Models;
 
 namespace ChoreManagement.core.lib.Services
 {
-    public class MemDataRepository : IDataRepository
+    public class DataRepository : IDataRepository
     {
         public List<Player> GetAllPlayers()
         {
@@ -20,7 +20,7 @@ namespace ChoreManagement.core.lib.Services
             };
         }
 
-        public List<Chore> GetAllShors()
+        public List<Chore> GetAllChors()
         {
             return new List<Chore>
             {

@@ -4,13 +4,13 @@ using ChoreManagement.core.lib.Models;
 
 namespace ChoreManagement.core.lib.Services
 {
-    public class DiceManager
+    public class ChoreManager
     {
         public static void GetInitialData(out List<Player> playerlst, out List<Chore> shorelst)
         {
             DataProvider.InitiateData(out playerlst, out shorelst);
         }
-        public static void AddRondomNumbersToShoresAndPlayer(List<Player> playerlst, List<Chore> shorelst, out IDictionary<int, Chore> shoresWithNumbers, out IDictionary<int, Player> playersWithNumbers)
+        public static void AddRondomNumbersToChoresAndPlayer(List<Player> playerlst, List<Chore> shorelst, out IDictionary<int, Chore> shoresWithNumbers, out IDictionary<int, Player> playersWithNumbers)
         {
             GetRondomNumbersToList(playerlst, shorelst, out shoresWithNumbers, out playersWithNumbers);
         }
