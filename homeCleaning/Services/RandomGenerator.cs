@@ -5,6 +5,46 @@ using System.Collections.Generic;
 
 namespace homeCleaning
 {
+    public class RandomFix<T>:List<T>{
+
+        public  readonly List<T> listReceived;
+        public RandomFix(List<T> list)
+        {
+            this.listReceived = list;
+        }
+
+        public  IDictionary<int, T> GetRandomNumberForEachObject()
+        {
+            var usedRandomNumbers = new List<int>();
+            var objectList = new Dictionary<int, T>();
+
+            foreach (var type in listReceived)
+            {
+            startLable:
+                var randomNumber = getRandomNumber(0, listReceived.Count + 1);
+
+                if (objectList.TryGetValue(randomNumber, out T _list))
+                {
+                    goto startLable;
+                }
+                else
+                {
+                    objectList.Add(randomNumber, type);
+                    usedRandomNumbers.Add(randomNumber);
+                };
+
+            }
+            return objectList;
+        }
+
+        private static int getRandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            int number = random.Next(min, max);
+
+            return number;
+        }
+    }
     public static class RandomGenerator
     {
         public static IDictionary<int, Player> GetRandomNumberForEachPlayer(List<Player> players)
@@ -61,8 +101,11 @@ namespace homeCleaning
         }
         public static void AddRondomNumbersToShoresAndPlayer(List<Player> playerlst, List<Shore> shorelst, out IDictionary<int, Shore> shoresWithNumbers, out IDictionary<int, Player> playersWithNumbers)
         {
-            shoresWithNumbers = GetRandomNumberForEachshore(shorelst);
-            playersWithNumbers = GetRandomNumberForEachPlayer(playerlst);
+            RandomFix<Player> _playerRandom = new RandomFix<Player>(playerlst);
+            playersWithNumbers = _playerRandom.GetRandomNumberForEachObject(); 
+            
+            RandomFix<Shore> _shoreRandom = new RandomFix<Shore>(shorelst);
+            shoresWithNumbers = _shoreRandom.GetRandomNumberForEachObject();
         }
     }
 }
