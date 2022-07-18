@@ -13,6 +13,7 @@ DisplaySelectNumber(choreEntity.choresWithNumbers);
  static void DisplayPlayers(IDictionary<int, Player> playersWithNumbers)
 {
     Console.Write("players are as follows" + Environment.NewLine);
+
     for (int i = 0; i <= playersWithNumbers.Keys.Count + 1; i++)
     {
         if (playersWithNumbers.TryGetValue(i, out Player player))
